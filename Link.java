@@ -1,4 +1,4 @@
-package sparkzilla;
+package spark1;
 
 public class Link extends Expression implements ActiveElement, Formstuff, Paragraphstuff {
 
