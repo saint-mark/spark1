@@ -2,14 +2,12 @@ package spark1;
 
 import java.util.LinkedList;
 
-public class Paragraph extends Container implements Htmlstuff, HTMLConstants {
+public class Paragraph extends Container implements Htmlstuff, Formstuff, HTMLConstants {
 
 	LinkedList<Paragraphstuff> Sequence;
 	
-	Paragraph(HTMLTokenizer Tokens){
-		while (Tokens.current().getKind() != CLOSEPARAGRAPH){
-			
-		}
+	Paragraph(LinkedList<Paragraphstuff> Sequence){
+		this.Sequence = Sequence;
 	}
 	
 	@Override

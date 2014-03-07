@@ -7,10 +7,8 @@ public class HTMLPage extends Container implements HTMLConstants {
 
 	LinkedList<Htmlstuff> Sequence;
 	
-	HTMLPage(HTMLTokenizer Tokens){
-		while (Tokens.current().getKind() != CLOSEBODY){
-			
-		}
+	HTMLPage(LinkedList<Htmlstuff> sequence){
+		this.Sequence = sequence; 
 	}
 	
 	@Override
