@@ -6,11 +6,6 @@ public class Parser implements HTMLConstants {
 	
 	HTMLTokenizer Tokens;
 	
-	
-	Parser(HTMLTokenizer tokens){
-		this.Tokens = tokens;
-	}
-	
 	/**
 	 * 
 	 * @param Token
@@ -105,15 +100,15 @@ public class Parser implements HTMLConstants {
 	 */
 	public Form parseForm() throws ParseException {
 		LinkedList<Formstuff> toBuild = new LinkedList<Formstuff>();
+		//TODO 
 		while (!expect(CLOSEFORM)){
 			if (expect(OPENPARAGRAPH)){
 				Tokens.advance();
 				toBuild.addLast(parseParagraph());
 			} else if (expect(INPUT)) {
-				String attr = Tokens.current().getAttr();
-				toBuild.addLast(new Input(attr));
+				
 			} else if (expect(SUBMIT)) {
-				toBuild.addLast(new Submit());
+				
 			} else {
 				throw new ParseException();
 			}
